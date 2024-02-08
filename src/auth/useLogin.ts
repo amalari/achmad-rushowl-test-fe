@@ -40,9 +40,10 @@ export const useLogin = () => {
       });
 
       console.log('Login successful:', response.data);
+      alert('Login successful')
     } catch (error) {
-      alert();
       console.error('Login error:', error);
+      alert('Login error')
     }
   }, [email, password]);
 

@@ -1,4 +1,3 @@
-import { debounce } from 'moderndash';
 import { useState, useMemo, useCallback } from 'react';
 
 type UseInputParams<T> = {
@@ -25,12 +24,12 @@ export const useInput = <T>(params?: UseInputParams<T>) => {
     return true;
   }, [value]);
 
-  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value as T);
     if (!isDirty && value !== defaultParams.initialValue) {
       setIsDirty(true);
     }
-  }, []);
+  };
 
   return {
     onChange,

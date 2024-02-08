@@ -16,7 +16,10 @@ const LoginPage = () => {
     <div className="bg-gradient-to-r from-blue-500 to-blue-700 shadow-md rounded-lg px-8 pt-6 pb-8 h-screen flex items-center jutify-center">
       <div className="bg-white w-full shadow-md rounded-lg px-8 pt-6 pb-8">
         <h1 className="text-2xl font-bold text-center mb-4">Login</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(e) => {
+          e.preventDefault()
+          handleSubmit()
+        }}>
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
